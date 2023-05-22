@@ -7,6 +7,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily : {
+        satoshi : ['satoshi', 'sans-serif'],
+        inter : ['Inter', 'sans-serif'],
+      },
+      colors:{
+        'primary-orange' : '#FF5722'
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
