@@ -29,9 +29,9 @@ export const Answer = (props : any) => {
       <div className = "flex-row-space"> 
         <div className = "subhead" >{props.time}</div>
         <div className = "flex-row">
-          <Image src="/remove.svg" alt="Change" width={30} height={30} onClick = {remove}/>
-          <Image src="/edit.svg" alt="Change" width={30} height={30} onClick = {edit}/>
-          <Image src="/favorite.svg" alt="Change" width={30} height={30} onClick = {favorite}/>
+          <div className = "cursor"><Image src="/remove.svg" alt="Change" width={30} height={30} onClick = {remove}/></div>
+          <div className = "cursor"><Image src="/edit.svg" alt="Change" width={30} height={30} onClick = {edit}/></div>
+          <div className = "cursor"><Image src="/favorite.svg" alt="Change" width={30} height={30} onClick = {favorite}/></div>         
         </div>
       </div>
       <textarea rows = {4} value = {answer} placeholder = '| 질문의 답을 적어주세요. 'onChange = {(e : React.ChangeEvent<HTMLTextAreaElement>) => {setAnswer(e.target.value)}}/>     
