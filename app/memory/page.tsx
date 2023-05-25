@@ -21,8 +21,7 @@ export default function memory() {
           일러스트
         </div>
       </div>
-    </div>
-   
+    </div>   
   )
 }
 

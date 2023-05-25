@@ -14,19 +14,21 @@ export const Question = () => {
     return year + '년 ' + month + '월 ' + day + '일'
   }
 
-  const changeQuestion = () =>{
+  const changeQuestion = () => {
 
 
   }
 
 
   return (
-    <div className = "question">
-      <div className ="subhead">{formatDate()}</div>
-      <div className = "flex-row-space">
-        <div className = "head3">{question}</div>
-        <Image src="/change.svg" alt="Change" width={25} height={25} onClick = {changeQuestion}/>
-      </div>  
+    <div className="question">
+      <div className="subhead">{formatDate()}</div>
+      <div className="flex-row-space">
+        <div className="head3">{question}</div>
+        <div className="cursor">
+          <Image src="/change.svg" alt="Change cursor" width={25} height={25} onClick={changeQuestion} />
+        </div>
+      </div>
     </div>
   )
 }

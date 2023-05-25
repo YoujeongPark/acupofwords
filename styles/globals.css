@@ -67,8 +67,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 748px;
-  height: 748px;
+  width: 500px;
+  height: 500px;
   background: #FFFFFF;
   border-radius: 24px;
   position: relative;
@@ -174,7 +174,7 @@
   gap: 10px;
   border-radius: 100px;
   background: #F4E8C7;
-  border: 1.8px solid #4E321D;
+  border: 2px solid #4E321D;
   border-radius: 27px;
 }
 
@@ -443,6 +443,84 @@ a {
 }
 
 .evaluate{
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 20px 40px;
+  margin: 10px 0;
+}
 
 
+.divide {
+  border: 1px solid #D6D6D6;
+  margin: 20px 0px;
+}
+
+.divide-90 {
+  border: 1px solid #D6D6D6;
+  margin: 0px 20px;
+}
+
+.mood{
+  border: 1px solid #D6D6D6;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+input {
+  background: rgba(255, 255, 255, 0.5);
+  background-image: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-256.png);
+  background-position: 13px center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: 1px solid #ccc;
+  padding: 5px 5px;
+  text-indent: 30px;
+  width: 150px;
+  border: 2px solid rgba(214, 214, 214, 0.5);
+  border-radius: 40px;
+}
+
+input:focus {
+  background-image: none;
+  background-position: -10px center;
+  text-indent: 10px;
+}
+
+.left-box{
+  width: 80vw;
+  height : 100vh;
+}
+
+.right-box{
+
+}
+
+.memory-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.memory-grid .memory-box{
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  background: #CCE6FF;
+  margin: 5px;
+  padding: 15px;
+  aspect-ratio: 1;
+}
+
+.memory-grid .start-memory-box{
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  border: 3px dashed #A48975;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 15px;
+  aspect-ratio: 1;
+}
+
+.cursor{aspect-ratio: 1;
+  cursor: pointer;
 }
