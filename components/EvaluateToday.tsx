@@ -7,7 +7,7 @@ export const EvaluateToday = () => {
   const [question, setQuestion] = useState<string>("지금 떠오르는 행복한 기억이 뭔가요? ");
   const [todayEmotion, setTodayEmotion] = useState<string>('')
 
-  const expression = ['happy','peaceful','sad' ,'angry' ,'worry']
+  const mood = ['happy','peaceful','sad' ,'angry' ,'worry']
 
   const selectEmotion = (e : React.MouseEvent<HTMLElement>) => {
     console.log(e.target)
@@ -24,7 +24,7 @@ export const EvaluateToday = () => {
         <div>{todayEmotion}</div>
       </div>
       <div className="flex-row">
-      {expression.map((item: any, i: any) => (
+      {mood.map((item: any, i: any) => (
         <div className  ="mr-5"><EmotionButton key={i} type = {item} children  ={item} onClick={selectEmotion}/></div>
       ))}
       </div>

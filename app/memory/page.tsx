@@ -37,7 +37,7 @@ export default function write() {
     console.log('startWrite')
   }
 
-  const expression = ['happy', 'peaceful', 'sad', 'angry', 'worry']
+  const mood = ['happy', 'peaceful', 'sad', 'angry', 'worry']
 
 
   const filter = () => {
@@ -72,7 +72,7 @@ export default function write() {
           <input type="search" name="search" placeholder="   검색" rel="search" />
           <div className="mood mt-5">
             <div>그날의 무드</div>
-            {expression.map((item: any, i: any) => (
+            {mood.map((item: any, i: any) => (
               <EmotionButton key={i} type={item} children={item} onClick={filter} />
             ))}
           </div>
