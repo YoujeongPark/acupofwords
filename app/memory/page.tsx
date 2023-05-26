@@ -5,17 +5,16 @@ import EmotionButton from "@/components/EmotionButton";
 import StartMemory from "@/components/StartMemory";
 import React, {useEffect, useState} from 'react';
 import { getQuestionData } from '../api/main'
-// import {useStore} from "../../store/store";
 
 export default function write() {
 
   const [questionData, setQuestionData] = useState<any[]>([]);
-
+  const [todayEmotion, setTodayEmotion] = useState<string>('')
+  
   const _getQuestionData = async () => {
     const response = await getQuestionData(); // type 변경 필요 
     if(response && response.status === 200){
       setQuestionData(response.data)
-      console.log(response.data)
     }else{
       setQuestionData([])
     }
@@ -73,7 +72,7 @@ export default function write() {
           <div className="mood mt-5">
             <div>그날의 무드</div>
             {mood.map((item: any, i: any) => (
-              <EmotionButton key={i} type={item} children={item} onClick={filter} />
+              <EmotionButton key={i} type={item} children={item} setTodayEmotion = {setTodayEmotion} onClick={filter} />
             ))}
           </div>
         </div>

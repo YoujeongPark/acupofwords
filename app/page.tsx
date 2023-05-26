@@ -12,20 +12,20 @@ export default function Home() {
     setShowModal(true)
   }
   const [showModal, setShowModal] = useState(false);
+  
 
   const closeLogin = () => {
     setShowModal(false);
-
   }
 
   return (
     <div className="w-full flex-start flex-col">
-      <div className="head2 fc-light-down">빠르게 변화하는 세상속에서</div>
-      <div className="head1 animate-pulse fc-dark-down" >글 한컵, 그리고</div>
+      <div className="head2 fc-light-down mt-10">빠르게 변화하는 세상속에서</div>
+      <div className="head1 animate-pulse fc-dark-down mt-3" >글 한컵, 그리고</div>
       <div className="head1 animate-pulse fc-dark-down">잠시 <span className="">'나'</span>를 돌아볼 시간</div>
       <br className="max-md:hidden" />
       <div className="subhead mg fc-dark-down">간단한 가입으로 글쓰기 시작하세요. </div>
-      <CustomButton onClick={start} style = "home-btn head2 fc-white rounded py4 py8 mt-5 hover:border-l-amber-800 transition-color duration-200 delay-200"> 시작하기 </CustomButton>
+      <CustomButton disable = {false} onClick={start} style = "home-btn head2 fc-white rounded py4 py8 mt-5 hover:border-l-amber-800 transition-color duration-200 delay-200"> 시작하기 </CustomButton>
       {/* <button className="home-btn head2 fc-white rounded py4 py8 mt-5 hover:border-l-amber-800 transition-color duration-200 delay-200" onClick={start}>시작하기</button> */}
       {showModal ? (
         <div className="bg-black">
