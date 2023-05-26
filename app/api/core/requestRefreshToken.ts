@@ -10,7 +10,7 @@ const requestRefreshToken = () =>
 
       // if (exp * REFRESH_TIME > Date.now()) resolve(token);
 
-      axios.post( `${process.env.REACT_APP_API_HOST}/auth/refreshToken`, {},{
+      axios.post( `${process.env.NEXT_PUBLIC_API_URL}/auth/refreshToken`, {},{
           headers: { Authorization: token },
         }
       ).then((res: any) => {
