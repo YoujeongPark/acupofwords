@@ -17,4 +17,4 @@ module.exports = (phase, { defaultConfig }) => {
 //   "assetPrefix": "https://~~~" 
 // };
 
-module.exports = nextConfig;
+// module.exports = nextConfig;
