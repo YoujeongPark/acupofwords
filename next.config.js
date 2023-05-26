@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 module.exports = (phase, { defaultConfig }) => {
   const rewrites = () => {
-    console.log("Rewrites called");
     return [
       {
         source: '/api/:path*',
@@ -11,3 +10,10 @@ module.exports = (phase, { defaultConfig }) => {
   }
   return { rewrites }
 }
+
+const nextConfig = {
+  output: 'export',
+  distDir: 'build',
+};
+
+module.exports = nextConfig;
