@@ -1,12 +1,13 @@
 'use client';
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { GoogleLogin } from '@react-oauth/google';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import CustomButton from "@/components/CustomButton";
-
+import Axios from 'axios';
+import { postOuthGoogle } from './api/main'
 
 export default function Home() {
-
+  
   const start = () => {
     setShowModal(true)
   }
@@ -14,6 +15,7 @@ export default function Home() {
 
   const closeLogin = () => {
     setShowModal(false);
+
   }
 
   return (
@@ -36,16 +38,21 @@ export default function Home() {
             <div className="head1 fc-dark-down">A Cup of Words</div>
             <div className="head2 fc-dark-down">하루를 바꿀 단 하나의 질문!</div>
             <div className="head3 fc-light-down">한잔의 향기를 즐기며 변화를 느껴보세요.</div>
-            <GoogleOAuthProvider clientId={process.env.REACT_APP_CLIENT_ID || ''}>
+            <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || ''}>
               <GoogleLogin
-                onSuccess={(res) => {
-                  const url = `${process.env.REACT_APP_SERVER}/api/oauth/google/members`;
-                  const config = { 'content-type': 'application/json' };
+                  onSuccess={async (res) => {
+
+                  // const url = `${process.env.NEXT_PUBLIC_API_URL}api/oauth/google/members`;
                   const token = {
                     "idToken": res.credential
                   };
+                  const response = await postOuthGoogle(token);
+                  if(response){
+                    console.log(response)
+                    localStorage.setItem("id", response.data.id);
+                  }
                   // Axios.post(url, token, config)
-                  // .then((response) => {
+                  // .then((response : any) => {
                   //     //저는 추가적으로 정보를 받아오기 위해서 네비게이션을 사용했습니다(선택사항) / 추가정보가 필요가 없을 경우에는 회원가입 처리 후, 쿠키 전달 예정(이후 로그인된 사용자 검증을 위해 사용)
                   // 		if ( response.data.active ) {
                   //         // navigate("/board");
@@ -58,15 +65,15 @@ export default function Home() {
                   //         //     }}
                   //         // );    
                   //     }
-                  //     localStorage.setItem("id",response.data.id);
+                  //     
                   // })
                   // .catch((error) => {
                   //     console.error(error);
                   // });
                 }}
-              // onFailure={(err : any) => {
-              //     console.log(err);
-              // }}
+                onError={() => {
+                  console.log('Login Failed');
+                }}
               />
             </GoogleOAuthProvider>
           </div>

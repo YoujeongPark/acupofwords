@@ -7,14 +7,14 @@ interface ButtonProps {
   children: React.ReactNode;
 }
 
-const StartMemory: React.FC<ButtonProps> = ({ onClick, children}) => {
+const StartMemory: React.FC<ButtonProps> = ({ onClick, children }) => {
 
   return (
-    <div onClick={onClick} className="flex-col start-memory-box cursor">
-      <div>
-        <Image src={`/startmemory.svg`} alt={'startmemory'} width={40} height={40} />
-        <div>오늘의 글</div>
-      </div>
+    <div onClick={onClick} className="start-memory-box cursor">
+        <div className = "flex-center">
+          <Image src={`/startmemory.svg`} alt={'startmemory'} width={40} height={40} />
+          <div>오늘의 글</div>
+        </div>
     </div>
   );
 };

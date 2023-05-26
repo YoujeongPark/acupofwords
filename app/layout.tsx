@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className = "main w-full h-full ">   
+      <body className = "main w-full h-full subhead">   
         <main className = "container">
           <Navbar/>
           {children} 

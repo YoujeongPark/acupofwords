@@ -30,18 +30,18 @@ const Navbar = () => {
       </a>
       <ul className={active}>
         <li className="nav__item">
-          <a href="/home" className="nav__link">
+          <a href="/home" className="nav__link sunhead">
             Home
-          </a>
-        </li>
-        <li className="nav__item">
-          <a href="/memory" className="nav__link">
-            기록함
           </a>
         </li>
         <li className="nav__item">
           <a href="/write" className="nav__link">
             글쓰기
+          </a>
+        </li>
+        <li className="nav__item">
+          <a href="/memory" className="nav__link">
+            기록함
           </a>
         </li>
       </ul>
@@ -51,23 +51,6 @@ const Navbar = () => {
         <div className="line3"></div>
       </div>
     </nav>
-    // <nav className = "flex-start w-full mb-16 pt-3">
-    //   <Link href = "/" className = "flex gap-2 flex-center">
-    //     <Image 
-    //       src = "../public/next.svg" 
-    //       alt = "Promptopia Logo"
-    //       width = {30}
-    //       height = {30}
-    //       className = "object-contain"
-    //     />
-    //   </Link>
-        
-
-
-    //   <div className = "sm:flex hidden">
-
-    //   </div>
-    // </nav>
   );
 }
 
