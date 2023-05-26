@@ -22,7 +22,7 @@ export const Question = () => {
 
   return (
     <div className="question">
-      <div className="subhead">{formatDate()}</div>
+      <div className="subhead fc-dark-down">{formatDate()}</div>
       <div className="flex-row-space">
         <div className="head3">{question}</div>
         <div className="cursor">

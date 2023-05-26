@@ -34,9 +34,9 @@ export const Answer = (props : any) => {
           <div className = "cursor"><Image src="/favorite.svg" alt="Change" width={30} height={30} onClick = {favorite}/></div>         
         </div>
       </div>
-      <textarea rows = {4} value = {answer} placeholder = '| 질문의 답을 적어주세요. 'onChange = {(e : React.ChangeEvent<HTMLTextAreaElement>) => {setAnswer(e.target.value)}}/>     
-      <div className = "flex-row-end">
-      <CustomButton  onClick={complete} style = "btn-beige">완료</CustomButton>
+      <textarea rows = {3} value = {answer} placeholder = {props.write} onChange = {(e : React.ChangeEvent<HTMLTextAreaElement>) => {setAnswer(e.target.value)}}/>     
+      <div className = "flex-row-end mt-3">
+      <CustomButton  onClick={complete} disable = {props.disable} style = {props.themeMode === 'day' ? "btn-beige" : "btn-light-blue"}>완료</CustomButton>
       </div>
     </div>
   )
