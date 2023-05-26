@@ -2,6 +2,7 @@
   "name": "slay-front",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://api.slayoutliers.click/",
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
