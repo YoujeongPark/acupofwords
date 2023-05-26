@@ -13,7 +13,7 @@ module.exports = (phase, { defaultConfig }) => {
 
 const nextConfig = {
   output: 'export',
-  distDir: 'build',
+  distDir: 'out',
 };
 
 module.exports = nextConfig;
