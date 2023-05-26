@@ -170,7 +170,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 12px 30px;
+  padding: 5px 30px;
   gap: 10px;
   border-radius: 100px;
   background: #F4E8C7;
@@ -473,7 +473,7 @@ input {
   background: rgba(255, 255, 255, 0.5);
   background-image: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-256.png);
   background-position: 13px center;
-  background-size: contain;
+  background-size: 3rem;
   background-repeat: no-repeat;
   border: 1px solid #ccc;
   padding: 5px 5px;
