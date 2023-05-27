@@ -1,7 +1,3 @@
-[build]
-publish = "publish"
-command = "npm run build"
-
 [[redirects]]
 from = "/proxy/*"
 to = "https://api.slayoutliers.click/:splat"  
