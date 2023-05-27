@@ -11,10 +11,7 @@ module.exports = (phase, { defaultConfig }) => {
   return { rewrites }
 }
 
-// const nextConfig = {
-//   "distDir": "build",
-//   "exportTrailingSlash": true,
-//   "assetPrefix": "https://~~~" 
-// };
-
-// module.exports = nextConfig;
+const nextConfig = {
+  output: 'export',
+  distDir: 'out',
+};
