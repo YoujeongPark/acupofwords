@@ -3,11 +3,12 @@ import React, { useState, useEffect } from "react";
 import { GoogleLogin } from '@react-oauth/google';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import CustomButton from "@/components/CustomButton";
-import Axios from 'axios';
-import { postOuthGoogle } from './api/main'
+import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
-  
+
+  const router = useRouter();
   const start = () => {
     setShowModal(true)
   }
@@ -41,16 +42,29 @@ export default function Home() {
             <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || ''}>
               <GoogleLogin
                   onSuccess={async (res) => {
-
-                  // const url = `${process.env.NEXT_PUBLIC_API_URL}api/oauth/google/members`;
                   const token = {
                     "idToken": res.credential
                   };
-                  const response = await postOuthGoogle(token);
-                  if(response){
-                    console.log(response)
-                    localStorage.setItem("id", response.data.id);
-                  }
+                  let url = process.env.NODE_ENV === 'development'? '' : process.env.NEXT_PUBLIC_API_URL
+                  axios.post( url +"api/members/oauth/google", {},{
+                    headers: token,
+                  }).then((response: any) => {
+                      if(response.status === 200){
+                        router.push('/home')
+                        console.log(response.data);
+                        //localStorage.setItem("id", res.data.id);
+                      }else{
+                        router.push('/')
+                      }
+                  });
+                  
+                  
+                  // const response = await postOuthGoogle(token);
+                  // if(response){
+                  //   console.log(response)
+                  //   localStorage.setItem("id", response.data.id);
+                  // }
+
                   // Axios.post(url, token, config)
                   // .then((response : any) => {
                   //     //저는 추가적으로 정보를 받아오기 위해서 네비게이션을 사용했습니다(선택사항) / 추가정보가 필요가 없을 경우에는 회원가입 처리 후, 쿠키 전달 예정(이후 로그인된 사용자 검증을 위해 사용)
