@@ -1,5 +1,0 @@
-[[redirects]]
-from = "/proxy/*"
-  to = "https://api.slayoutliers.click/:splat"  
-  status = 200
-  force = true
