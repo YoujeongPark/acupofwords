@@ -26,22 +26,28 @@ const Navbar = () => {
   return (
     <nav className="nav">
       <a href="/" className="nav-brand">
-        로고
+          <Image 
+          src = "logo.svg" 
+          alt = "Promptopia Logo"
+          width = {100}
+          height = {25}
+          className = "object-contain"
+        />
       </a>
       <ul className={active}>
         <li className="nav__item">
-          <a href="/home" className="nav__link sunhead">
+          <a href="/" className="nav__link sunhead">
             Home
           </a>
         </li>
         <li className="nav__item">
-          <a href="/write" className="nav__link">
-            글쓰기
+          <a href="/day" className="nav__link">
+            아침
           </a>
         </li>
         <li className="nav__item">
-          <a href="/memory" className="nav__link">
-            기록함
+          <a href="/night" className="nav__link">
+            저녁
           </a>
         </li>
       </ul>
