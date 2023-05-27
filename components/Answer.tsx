@@ -6,7 +6,7 @@ export const Answer = (props : any) => {
 
   const [answer, setAnswer] = useState<string>("");
   const [placeHolder, setplaceHorder] = useState<string>("");
-  
+  const [themeMode, setThemeMode] = useState<string>("")
   const complete = () => {
     console.log('complete')
   }
@@ -24,6 +24,11 @@ export const Answer = (props : any) => {
   }
 
 
+  useEffect(() => {
+    setThemeMode(props.themeMode)
+  },[props.themeMode])
+
+
   return (
     <div className = "answer flex-column">
       <div className = "flex-row-space"> 
@@ -36,7 +41,7 @@ export const Answer = (props : any) => {
       </div>
       <textarea rows = {3} value = {answer} placeholder = {props.write} onChange = {(e : React.ChangeEvent<HTMLTextAreaElement>) => {setAnswer(e.target.value)}}/>     
       <div className = "flex-row-end mt-3">
-      <CustomButton  onClick={complete} disable = {props.disable} style = {props.themeMode === 'day' ? "btn-beige" : "btn-light-blue"}>완료</CustomButton>
+      <CustomButton  onClick={complete} disable = {props.disable} style = {themeMode === 'day' ? "btn-beige" : "btn-light-blue"}>완료</CustomButton>
       </div>
     </div>
   )
