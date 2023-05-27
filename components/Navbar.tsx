@@ -26,7 +26,13 @@ const Navbar = () => {
   return (
     <nav className="nav">
       <a href="/" className="nav-brand">
-        로고
+          <Image 
+          src = "logo.svg" 
+          alt = "Promptopia Logo"
+          width = {100}
+          height = {25}
+          className = "object-contain"
+        />
       </a>
       <ul className={active}>
         <li className="nav__item">

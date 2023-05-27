@@ -2,9 +2,10 @@
 import React, { useLayoutEffect, useEffect } from "react";
 import CustomButton from "@/components/CustomButton";
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+
 
 export default function home() {
-
   const router = useRouter();
 
   const start = () => {
@@ -12,9 +13,13 @@ export default function home() {
   }
 
   return (
-    <div>
-      <div>따뜻한~</div>
-      <CustomButton disable = {false} onClick={start} style="btn-beige"> 커피/차 내리기 시작하기 →  </CustomButton>
+    <div className="flex-center mt-10">
+      <div className = "mt-10">
+        <Image src="/start.svg" alt="start" width={700} height={400} />
+      </div>
+      <div className = "mt-10">
+        <CustomButton disable={false} onClick={start} style="btn-beige"> 커피/차 내리기 시작하기 →  </CustomButton>
+      </div>
     </div>
   )
 }
