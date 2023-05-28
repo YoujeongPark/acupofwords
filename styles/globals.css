@@ -559,7 +559,12 @@ textarea{
   width : inherit;
   height : inherit;
   background: transparent;
+  color: #4E321D;
   /* background-color: rgba(255, 255, 255, 0.5); */
+}
+
+textarea::placeholder{
+  color: rgba(78, 50, 29, 0.7);
 }
 
 textarea:focus{
