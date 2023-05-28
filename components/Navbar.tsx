@@ -23,7 +23,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="nav">
+    <nav className="nav fc-dark-down">
       <a href="/" className="nav-brand">
           <Image 
           src = "logo.svg" 
