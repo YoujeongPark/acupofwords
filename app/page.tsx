@@ -52,9 +52,9 @@ export default function Home() {
       </div>
       <div className="flex-row-center pdtb-50">
         <div>
-          <div className="head2 fc-light-down">같은 질문, but 색다른 답</div>
+          <div className="head2 fc-light-down">다양한 질문과 색다른 답</div>
           <div className="head1 fc-dark-down">저녁에는 한층 더 성장한 ‘나’로! </div>
-          <div className="subhead fc-dark-down">따뜻한 차와 글의 온기를 느끼며 온종일 지친 몸과 마음을 회복시켜주세요. 아침의 질문을 되새기며 새로운 시점을 발견하고 생각의 변화를 기록하고 소장해보세요. </div>
+          <div className="subhead fc-dark-down">따뜻한 차와 글의 온기를 느끼며 온종일 지친 몸과 마음을 회복시켜주세요. 아침의 글을 되새기며 다양한 생각의 변화를 기록하고 소장해보세요. </div>
         </div>
         <Image
           src="home-night.svg"
@@ -67,7 +67,7 @@ export default function Home() {
         <div className="mt-10">
           <Image src="/start.svg" alt="start" width={500} height={500} />
         </div>
-        <div className="mt-10">
+        <div className="mt-20">
           <CustomButton disable={false} onClick={start} style="btn-beige"> 커피/차 내리기 시작하기 →  </CustomButton>
         </div>
       </div>
