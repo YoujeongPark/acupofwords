@@ -14,7 +14,7 @@ const EmotionButton: React.FC<ButtonProps> = ({ onClick, children , type , setTo
   return (
     <button onClick={() => setTodayEmotion(type)} className="flex-row items-center gap-5 mt-3">
       <Image src={`/${type}.svg`} alt={type} width={30} height={30}/>
-      {mood[type]}
+      {/* {mood[type]} */}
     </button>
   );
 };

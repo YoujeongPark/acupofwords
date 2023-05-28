@@ -1,16 +1,15 @@
 'use client';
 
-import React, {useState, useEffect} from 'react'
-import Link from 'next/link';
+import React, {useState} from 'react'
 import Image from 'next/image';
-// import {signIn, signOut, useSession, getProviders} from 'next-auth/react'
+import { usePathname } from 'next/navigation';
 
 
 
 const Navbar = () => {
   const [active, setActive] = useState("nav__menu");
   const [icon, setIcon] = useState("nav__toggler");
-
+  const pathname = usePathname();
 
   const navToggle = () => {
     if (active === "nav__menu") {
@@ -20,34 +19,34 @@ const Navbar = () => {
     // Icon Toggler
     if (icon === "nav__toggler") {
       setIcon("nav__toggler toggle");
-    } else setIcon("nav__toggler");
+    } else setIcon("nav__toggler"); 
   };
 
   return (
-    <nav className="nav">
+    <nav className="nav fc-dark-down">
       <a href="/" className="nav-brand">
           <Image 
           src = "logo.svg" 
           alt = "Promptopia Logo"
-          width = {100}
-          height = {25}
+          width = {120}
+          height = {30}
           className = "object-contain"
         />
       </a>
       <ul className={active}>
-        <li className="nav__item">
-          <a href="/home" className="nav__link sunhead">
+        <li className={`nav__item ${pathname === '/' ? "font-bold" : ""}`}>
+          <a href="/" className="nav__link">
             Home
           </a>
         </li>
-        <li className="nav__item">
-          <a href="/write" className="nav__link">
-            글쓰기
+        <li className={`nav__item ${pathname === '/day' ? "font-bold" : ""}`}>
+          <a href="/day" className="nav__link">
+            아침
           </a>
         </li>
-        <li className="nav__item">
-          <a href="/memory" className="nav__link">
-            기록함
+        <li className={`nav__item ${pathname === '/night' ? "font-bold" : ""}`}>
+          <a href="/night" className="nav__link">
+            저녁
           </a>
         </li>
       </ul>

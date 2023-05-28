@@ -5,7 +5,7 @@
   "proxy": "https://api.slayoutliers.click/",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -13,9 +13,13 @@
     "@react-oauth/google": "^0.11.0",
     "autoprefixer": "10.4.14",
     "axios": "^1.4.0",
+    "dom-to-image": "^2.6.0",
     "dotenv": "^16.0.3",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.3",
+    "file-saver": "^2.0.5",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1",
     "next": "13.4.3",
     "postcss": "8.4.23",
     "react": "18.2.0",
@@ -25,6 +29,8 @@
     "zustand-persist": "^0.4.0"
   },
   "devDependencies": {
+    "@types/dom-to-image": "^2.6.4",
+    "@types/file-saver": "^2.0.5",
     "@types/node": "^20.2.4",
     "@types/react": "^18.2.7",
     "@types/react-dom": "^18.2.4",
