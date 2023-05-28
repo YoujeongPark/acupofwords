@@ -5,6 +5,7 @@ import CustomButton from "@/components/CustomButton";
 export const EvaluateToday = (props :any) => {
 
   const [question, setQuestion] = useState<string>("지금 떠오르는 행복한 기억이 뭔가요? ");
+  const [todayEmotion, setTodayEmotion] = useState<string>('')
   const [themeMode, setThemeMode] = useState<string>("")
 
   const mood = ['happy','peaceful','sad' ,'angry' ,'worry']
@@ -13,7 +14,6 @@ export const EvaluateToday = (props :any) => {
   useEffect(() => {
     setThemeMode(props.themeMode)
   },[props.themeMode])
-
 
   const selectEmotion = (e : any) => {
     props.setTodayEmotion(e.target? e.target.getAttribute('alt') : null);
@@ -33,9 +33,6 @@ export const EvaluateToday = (props :any) => {
         </div>
       ))}
       </div>
-      {/* <div className = "flex-row-end mt-5">
-        <CustomButton disable = {false} onClick={save} style = {themeMode === 'day' ? "btn-beige" : "btn-light-blue"}>완료</CustomButton>
-      </div>       */}
     </div>
   )
 }
