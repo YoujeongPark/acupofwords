@@ -29,8 +29,8 @@ const Navbar = () => {
           <Image 
           src = "logo.svg" 
           alt = "Promptopia Logo"
-          width = {100}
-          height = {25}
+          width = {120}
+          height = {30}
           className = "object-contain"
         />
       </a>

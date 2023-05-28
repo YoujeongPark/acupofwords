@@ -16,7 +16,7 @@ export const Question = () => {
   }
 
   useEffect(() => {
-    setQuestion(getData[rand(0, getData.length)]? getData[rand(0, getData.length)].answer : '');
+    setQuestion(getData[rand(0, getData.length)].answer? getData[rand(0, getData.length)].answer : '');
   },[])
 
   function rand(min : number, max : number) {
