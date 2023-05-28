@@ -18,10 +18,6 @@ export default function day() {
     document.body.dataset.theme = 'day'
   }, [])
 
-  useEffect(() => {
-    console.log(todayEmotion)
-  }, [todayEmotion])
-
   const saveJpg = async () => {
     if (!divRef.current) return;
     try {
@@ -30,7 +26,7 @@ export default function day() {
       const canvas = await html2canvas(div, { scale: 1 });
       canvas.toBlob((blob) => {
         if (blob !== null) {
-          saveAs(blob, `${new Date()}.jpg`);
+          saveAs(blob, `Day-${new Date()}.jpg`);
         }
       });
     } catch (error) {
@@ -46,33 +42,31 @@ export default function day() {
       const canvas = await html2canvas(div, { scale: 1 });
       const pdf = new jsPDF();
       const imgData = canvas.toDataURL('image/png');
-      pdf.addImage(imgData, 'PNG', 0, 0, 200, 200);
-      pdf.save(`${new Date()}.pdf`);
+      pdf.addImage(imgData, 'PNG', 0, 0, 170, 100);
+      pdf.save(`Day-${new Date()}.pdf`);
     } catch (error) {
       console.error("Error converting div to image:", error);
     }
   }
 
   return (
-    <div className="oveflow-y" id="capture" >
-      <div ref={divRef}>
-        <Question />
-        <div className="flex-row">
-          <div style={{ width: '80%' }}>
+    <div className="oveflow-y flex-column" id="capture" >
+      <div className="flex-row-center">
+        <div style={{ width: '80%' }} className="h-auto" >
+          <div ref={divRef}>
+            <Question />
             <NewAnswer disable={false} todayEmotion={todayEmotion} time={'아침의 생각'} write={'| 질문의 답을 적어주세요. '} themeMode={'day'} />
           </div>
-          <div className="ml-20">
-            <Image src={`/day.gif`} className="cursor" alt="left" width={300} height={500} />
+          <EvaluateToday setTodayEmotion={setTodayEmotion} todayEmotion={todayEmotion} themeMode={themeMode} />
+          <div className="flex-end gap-5 mt-5">
+            <CustomButton disable={false} onClick={saveJpg} imgsrc={'/jpgSave-day.svg'} style="btn-beige delay-200 flex-row-center gap-3"> JPG로 저장 </CustomButton>
+            <CustomButton disable={false} onClick={savePdf} imgsrc={'/pdfSave-day.svg'} style="btn-beige delay-200 flex-row-center gap-3"> PDF로 저장 </CustomButton>
           </div>
-        </div >
-      </div>
-      <div className="mt-10" style={{ width: '68%' }}>
-        <EvaluateToday setTodayEmotion={setTodayEmotion} todayEmotion={todayEmotion} themeMode={themeMode} />
-        <div className="flex-end gap-5 mt-5">
-          <CustomButton disable={false} onClick={saveJpg} imgsrc={'/jpgSave.svg'} style="btn-beige delay-200 flex-row-center gap-3"> JPG로 저장 </CustomButton>
-          <CustomButton disable={false} onClick={savePdf} imgsrc={'/pdfSave.svg'} style="btn-beige delay-200 flex-row-center gap-3"> PDF로 저장 </CustomButton>
         </div>
-      </div>
+        <div className="ml-20">
+          <Image src={`/day.gif`} className="cursor" alt="left" width={300} height={500} />
+        </div>
+      </div >
     </div>
   )
 }
