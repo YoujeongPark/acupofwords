@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import {getData} from '../store/data'
 
-export const Question = () => {
+export const Question = (props : any) => {
 
   const [question, setQuestion] = useState<string>('');
 
@@ -16,10 +16,14 @@ export const Question = () => {
   }
 
   useEffect(() => {
-    setQuestion(getData[rand(0, getData.length)].answer? getData[rand(0, getData.length)].answer : '');
-  },[getData])
+    if(getData.length > 0){
+      console.log(getData[0])
+      const randombox = getData[rand(0, getData.length)] 
+      setQuestion(randombox && randombox.answer? randombox.answer : '');
+    }
+  },[])
 
-  function rand(min : number, max : number) {
+  const rand = (min : number, max : number) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
@@ -32,11 +36,11 @@ export const Question = () => {
 
   return (
     <div className="question items-center">
-      <div className="subhead fc-dark-down">{formatDate()}</div>
-      <div className="flex-row-space">
+      <div className="subhead">{formatDate()}</div>
+      <div className="flex-row-space items-center">
         <div className="head3">{question}</div>
         <div className="cursor">
-          <Image src="/change.svg" alt="Change cursor" width={25} height={25} onClick={changeQuestion} />
+          <Image src={`/change-${props.type}.svg`} alt="Change cursor" width={25} height={25} onClick={changeQuestion} />
         </div>
       </div>
     </div>

@@ -50,11 +50,11 @@ export default function day() {
   }
 
   return (
-    <div className="oveflow-y flex-column" id="capture" >
+    <div className="oveflow-y flex-column fc-dark-down" id="capture" >
       <div className="flex-row-center">
         <div style={{ width: '80%' }} className="h-auto" >
           <div ref={divRef}>
-            <Question />
+            <Question type = "day"/>
             <NewAnswer disable={false} todayEmotion={todayEmotion} time={'아침의 생각'} write={'| 질문의 답을 적어주세요. '} themeMode={'day'} />
           </div>
           <EvaluateToday setTodayEmotion={setTodayEmotion} todayEmotion={todayEmotion} themeMode={themeMode} />

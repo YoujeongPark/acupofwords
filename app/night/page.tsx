@@ -49,11 +49,11 @@ export default function night() {
   }
 
   return (
-    <div className="oveflow-y flex-column" id="capture" >
+    <div className="oveflow-y flex-column fc-dark-blue" id="capture" >
       <div className="flex-row-center">
         <div style={{ width: '80%' }} className="h-auto" >
           <div ref={divRef}>
-            <Question />
+            <Question type = "night"/>
             <NewAnswer disable={false} todayEmotion={todayEmotion} time={'저녁의 생각'} write={'| 질문의 답을 적어주세요. '} themeMode={'night'} />
           </div>
           <EvaluateToday setTodayEmotion={setTodayEmotion} todayEmotion={todayEmotion} themeMode={themeMode} />

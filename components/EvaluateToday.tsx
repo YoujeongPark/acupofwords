@@ -23,7 +23,7 @@ export const EvaluateToday = (props :any) => {
   return (
     <div className="evaluate flex-column">
       <div className = "flex-row">
-        <div className="subhead" >오늘 하루를 평가해주세요.   </div>
+        <div className="subhead" >지금의 기분은? </div>
         {/* <div className = "font-bold">{key[props.todayEmotion]}</div> */}
       </div>
       <div className="flex-row">
