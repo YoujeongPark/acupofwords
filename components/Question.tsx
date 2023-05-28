@@ -16,17 +16,15 @@ export const Question = (props : any) => {
   }
 
   useEffect(() => {
-    if(getData.length > 0){
-      console.log(getData[0])
+    if(getData && getData.length > 0){
       const randombox = getData[rand(0, getData.length)] 
       setQuestion(randombox && randombox.answer? randombox.answer : '');
     }
-  },[])
+  },[getData])
 
   const rand = (min : number, max : number) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-
 
   const changeQuestion = () => {
     //getData[0]//
