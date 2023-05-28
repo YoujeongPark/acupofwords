@@ -571,9 +571,6 @@ textarea:focus{
   height : 100vh;
 }
 
-.right-box{
-
-}
 
 .memory-grid{
   display: grid;
@@ -606,4 +603,8 @@ textarea:focus{
 
 .cursor{
   cursor: pointer;
+}
+
+.bold {
+  font-weight: bold;
 }
