@@ -21,7 +21,7 @@ export default function Home() {
           <div className="head2 fc-light-down mt-20">빠르게 변화하는 세상속에서</div>
           <div className="head1 animate-pulse fc-dark-down" >글 한컵으로</div>
           <div className="head1 animate-pulse fc-dark-down">잠시 <span className="">'나'</span>를 돌아볼 시간</div>
-          <div className="subhead mg fc-dark-down">간단한 가입으로 글쓰기 시작하세요. </div>
+          <div className="subhead mg fc-dark-down">지금 바로 글쓰기 시작하세요. </div>
           <div className="mt-10">
             <CustomButton disable={false} onClick={start} style="btn-brown delay-200"> 시작하기 </CustomButton>
           </div>
