@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
 
 export default function CustomSwitch({
   selectionMode,
@@ -19,9 +19,9 @@ export default function CustomSwitch({
       style={{
         height: 44,
         width: '100%',
-        backgroundColor: '#e4e4e4',
-        borderRadius: 10,
-        borderColor: '#AD40AF',
+        // backgroundColor: '#e4e4e4',
+        // borderRadius: 10,
+        // borderColor: '#AD40AF',
         flexDirection: 'row',
         justifyContent: 'center',
       }}>
@@ -30,7 +30,7 @@ export default function CustomSwitch({
         onPress={() => updateSwitchData(1)}
         style={{
           flex: 1,
-          backgroundColor: getSelectionMode == 1 ? '#AD40AF' : '#e4e4e4',
+          backgroundColor: getSelectionMode == 1 ? '#454544' : '#e4e4e4',
           borderRadius: 10,
           justifyContent: 'center',
           alignItems: 'center',
@@ -49,7 +49,7 @@ export default function CustomSwitch({
         onPress={() => updateSwitchData(2)}
         style={{
           flex: 1,
-          backgroundColor: getSelectionMode == 2 ? '#AD40AF' : '#e4e4e4',
+          backgroundColor: getSelectionMode == 2 ? '#454544' : '#e4e4e4',
           borderRadius: 10,
           justifyContent: 'center',
           alignItems: 'center',
@@ -57,25 +57,6 @@ export default function CustomSwitch({
         <Text
           style={{
             color: getSelectionMode == 2 ? 'white' : '#AD40AF',
-            fontSize: 14,
-            // fontFamily: 'Roboto-Medium',
-          }}>
-          {option2}
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        activeOpacity={3}
-        onPress={() => updateSwitchData(3)}
-        style={{
-          flex: 1,
-          backgroundColor: getSelectionMode == 3 ? '#AD40AF' : '#e4e4e4',
-          borderRadius: 10,
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-        <Text
-          style={{
-            color: getSelectionMode == 3 ? 'white' : '#AD40AF',
             fontSize: 14,
             // fontFamily: 'Roboto-Medium',
           }}>

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -9,19 +9,18 @@ import {
   TouchableOpacity,
 } from 'react-native';
 // import Carousel from 'react-native-snap-carousel';
-// import Feather from 'react-native-vector-icons/Feather';
 
 import BannerSlider from '../components/BannerSlider';
-import {windowWidth} from '../utils/Dimensions';
+import { windowWidth } from '../utils/Dimensions';
 
-import {freeGames, paidGames, sliderData} from '../model/data';
+import { freeGames, paidGames, sliderData } from '../model/data';
 import CustomSwitch from '../components/CustomSwitch';
 import ListItem from '../components/ListItem';
 
-export default function HomeScreen({navigation}) {
+export default function HomeScreen({ navigation }) {
   const [gamesTab, setGamesTab] = useState(1);
 
-  const renderBanner = ({item, index}) => {
+  const renderBanner = ({ item, index }) => {
     return <BannerSlider data={item} />;
   };
 
@@ -34,30 +33,31 @@ export default function HomeScreen({navigation}) {
   }
 
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>
-      <ScrollView style={{padding: 20}}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
+      <ScrollView style={{ padding: 20 }}>
         <View
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
             marginBottom: 20,
           }}>
-          <Text style={{fontSize: 18, 
+          <Text style={{
+            fontSize: 18,
             // fontFamily: 'Roboto-Medium'
-            }}>
-            글한컵
+          }}>
+            글한컵3
           </Text>
           <TouchableOpacity onPress={() => navigation.openDrawer()}>
             <ImageBackground
               source={require('../assets/images/user-profile.jpg')}
-              style={{width: 35, height: 35}}
-              imageStyle={{borderRadius: 25}}
+              style={{ width: 35, height: 35 }}
+              imageStyle={{ borderRadius: 25 }}
             />
           </TouchableOpacity>
         </View>
         <View>
-          <Text style={{color: '#0aada8'}}>오늘의 질문과 음료를 선택하세요</Text>
-          <Text style={{color: '#0aada8'}}>오늘의 질문과 음료를 선택하세요</Text>
+          <Text style={{ color: '#0aada8' }}>오늘의 질문과 음료를 선택하세요</Text>
+          <Text style={{ color: '#0aada8' }}>오늘의 질문과 음료를 선택하세요</Text>
         </View>
         <View
           style={{
@@ -68,12 +68,12 @@ export default function HomeScreen({navigation}) {
             paddingHorizontal: 10,
             paddingVertical: 8,
           }}>
-          <TextInput 
-            caretHidden={true} 
-            placeholder="예 : 지금 떠오르는 행복한 기억은 뭔가요?" 
+          <TextInput
+            caretHidden={true}
+            placeholder="예 : 지금 떠오르는 행복한 기억은 뭔가요?"
             // pointerEvents="none"
             onTouchStart={changeQuestion}
-            />
+          />
         </View>
         {/* <View
           style={{
@@ -90,7 +90,7 @@ export default function HomeScreen({navigation}) {
             <Text style={{color: '#0aada8'}}>See all</Text>
           </TouchableOpacity>
         </View> */}
-        <View style={{marginVertical: 20}}>
+        <View style={{ marginVertical: 20 }}>
           <CustomSwitch
             selectionMode={1}
             option1="Recent"
@@ -99,23 +99,50 @@ export default function HomeScreen({navigation}) {
             onSelectSwitch={onSelectSwitch}
           />
         </View>
-        {gamesTab == 1 &&
-          freeGames.map(item => (
-            <ListItem
-              key={item.id}
-              photo={item.poster}
-              title={item.title}
-              subTitle={item.subtitle}
-              isFree={item.isFree}
-              onPress={() =>
-                navigation.navigate('GameDetails', {
-                  title: item.title,
-                  id: item.id,
-                })
-              }
-            />
-          ))}
-        {gamesTab == 2 &&
+        <ScrollView
+          horizontal={true}
+          style={{
+            flex: 0,
+            flexDirection: 'row',
+            paddingHorizontal: 10,
+            paddingVertical: 8,
+          }}
+        >
+          {gamesTab == 1 &&
+            freeGames.map(item => (
+              <ListItem
+                key={item.id}
+                photo={item.poster}
+                title={item.title}
+                subTitle={item.subtitle}
+                isFree={item.isFree}
+                onPress={() =>
+                  navigation.navigate('GameDetails', {
+                    title: item.title,
+                    id: item.id,
+                  })
+                }
+              />
+            ))}
+          {gamesTab == 2 &&
+            paidGames.map(item => (
+              <ListItem
+                key={item.id}
+                photo={item.poster}
+                title={item.title}
+                subTitle={item.subtitle}
+                isFree={item.isFree}
+                price={item.price}
+                onPress={() =>
+                  navigation.navigate('GameDetails', {
+                    title: item.title,
+                    id: item.id,
+                  })
+                }
+              />
+            ))}
+        </ScrollView>
+        {gamesTab == 3 &&
           paidGames.map(item => (
             <ListItem
               key={item.id}
@@ -132,23 +159,22 @@ export default function HomeScreen({navigation}) {
               }
             />
           ))}
-         {gamesTab == 3 &&
-          paidGames.map(item => (
-            <ListItem
-              key={item.id}
-              photo={item.poster}
-              title={item.title}
-              subTitle={item.subtitle}
-              isFree={item.isFree}
-              price={item.price}
-              onPress={() =>
-                navigation.navigate('GameDetails', {
-                  title: item.title,
-                  id: item.id,
-                })
-              }
-            />
-          ))}
+        <TouchableOpacity style={{
+          backgroundColor: '#454544',
+          padding: 10,
+          width: 300,
+          borderRadius: 10,
+          justifyContent: 'space-between',
+        }}>
+          <Text style={{
+            color: '#fff',
+            textAlign: 'center',
+            // fontFamily: 'Roboto-Medium',
+            fontSize: 14,
+          }}>
+            Start
+          </Text>
+        </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   );

@@ -1,7 +1,6 @@
 import React from 'react';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { View, Text, StyleSheet, SafeAreaView, Image, FlatList, ScrollView, TouchableOpacity, Button } from 'react-native';
-// import Feather from 'react-native-vector-icons/Feather';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import colors from '../src/assets/colors/colors';
@@ -51,12 +50,6 @@ function HomeScreen({ navigation }) {
               backgroundColor: item.selected ? colors.white : colors.secondary,
             },
           ]}>
-          {/* <Feather
-            name="chevron-right"
-            size={8}
-            style={styles.categorySelectIcon}
-            color={item.selected ? colors.black : colors.white}
-          /> */}
         </View>
       </View>
     );
@@ -70,7 +63,6 @@ function HomeScreen({ navigation }) {
             // source={require('../assets/images/profile.png')}
             style={styles.profileImage}
           />
-          {/* <Feather name="menu" size={24} color={colors.textDark} /> */}
         </View>
       </SafeAreaView>
       <Text style={styles.categoryItemTitle}>2023년 07월 07일</Text>

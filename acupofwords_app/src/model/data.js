@@ -15,7 +15,7 @@ export const sliderData = [
 
 export const paidGames = [
   {
-    poster: require('../assets/images/spiderman.webp'),
+    poster: require('../assets/images/cup.png'),
     title: 'Spider-Man',
     subtitle: 'Marvel',
     isFree: 'No',
@@ -23,7 +23,7 @@ export const paidGames = [
     id: '1',
   },
   {
-    poster: require('../assets/images/battlefield-2042.webp'),
+    poster: require('../assets/images/cup.png'),
     title: 'Battlefield 2042',
     subtitle: 'EA',
     isFree: 'No',
@@ -31,7 +31,7 @@ export const paidGames = [
     id: '2',
   },
   {
-    poster: require('../assets/images/miles-morales.webp'),
+    poster: require('../assets/images/cup.png'),
     title: 'Spider-Man: Miles Morales',
     subtitle: 'Marvel',
     isFree: 'No',
@@ -39,7 +39,7 @@ export const paidGames = [
     id: '3',
   },
   {
-    poster: require('../assets/images/halo-infinite.jpeg'),
+    poster: require('../assets/images/cup.png'),
     title: 'Halo Infinite',
     subtitle: 'Xbox Game',
     isFree: 'No',
@@ -47,7 +47,7 @@ export const paidGames = [
     id: '4',
   },
   {
-    poster: require('../assets/images/FarCry6.png'),
+    poster: require('../assets/images/cup.png'),
     title: 'Far Cry 6',
     subtitle: 'Ubisoft',
     isFree: 'No',
@@ -55,7 +55,7 @@ export const paidGames = [
     id: '5',
   },
   {
-    poster: require('../assets/images/god-of-war.jpeg'),
+    poster: require('../assets/images/cup.png'),
     title: 'God of War: Ragnarok',
     subtitle: 'Sony',
     isFree: 'No',
@@ -66,42 +66,42 @@ export const paidGames = [
 
 export const freeGames = [
   {
-    poster: require('../assets/images/Altos-Odyssey.jpeg'),
-    title: 'Altos Odyssey',
-    subtitle: 'Noodlecake Studios',
+    poster: require('../assets/images/cup.png'),
+    title: '따뜻한 아메리카노',
+    subtitle: '한겨울의 어쩌구',
     isFree: 'Yes',
     id: '1',
   },
   {
-    poster: require('../assets/images/asphalt-9.jpeg'),
+    poster: require('../assets/images/cup.png'),
     title: 'Asphalt 9',
     subtitle: 'Gameloft',
     isFree: 'Yes',
     id: '2',
   },
   {
-    poster: require('../assets/images/genshin-impact.jpeg'),
+    poster: require('../assets/images/cup.png'),
     title: 'Genshin Impact',
     subtitle: 'miHoYo',
     isFree: 'Yes',
     id: '3',
   },
   {
-    poster: require('../assets/images/fortnite.webp'),
+    poster: require('../assets/images/cup.png'),
     title: 'Fortnite',
     subtitle: 'Epic Games',
     isFree: 'Yes',
     id: '4',
   },
   {
-    poster: require('../assets/images/pokemon-unite.jpeg'),
+    poster: require('../assets/images/cup.png'),
     title: 'Pokémon Unite',
     subtitle: 'The Pokémon Company',
     isFree: 'Yes',
     id: '5',
   },
   {
-    poster: require('../assets/images/diablo-4.jpeg'),
+    poster: require('../assets/images/cup.png'),
     title: 'Diablo 4',
     subtitle: 'Blizzard Entertainment',
     isFree: 'No',
