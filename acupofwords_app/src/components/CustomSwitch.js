@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
+import colors from "../assets/colors/colors"
 
 export default function CustomSwitch({
   selectionMode,
@@ -17,11 +18,9 @@ export default function CustomSwitch({
   return (
     <View
       style={{
-        height: 44,
-        width: '100%',
-        // backgroundColor: '#e4e4e4',
-        // borderRadius: 10,
-        // borderColor: '#AD40AF',
+        height: 20,
+        width: '50%',
+        fontFamily: 'OpenSans-SemiBold',
         flexDirection: 'row',
         justifyContent: 'center',
       }}>
@@ -30,16 +29,14 @@ export default function CustomSwitch({
         onPress={() => updateSwitchData(1)}
         style={{
           flex: 1,
-          backgroundColor: getSelectionMode == 1 ? '#454544' : '#e4e4e4',
-          borderRadius: 10,
           justifyContent: 'center',
           alignItems: 'center',
         }}>
         <Text
           style={{
-            color: getSelectionMode == 1 ? 'white' : '#AD40AF',
-            fontSize: 14,
-            // fontFamily: 'Roboto-Medium',
+            color: getSelectionMode == 1 ?  colors.darkGrey:  colors.darkGrey,
+            fontSize: 15,
+            fontFamily: 'OpenSans-SemiBold',
           }}>
           {option1}
         </Text>
@@ -49,16 +46,14 @@ export default function CustomSwitch({
         onPress={() => updateSwitchData(2)}
         style={{
           flex: 1,
-          backgroundColor: getSelectionMode == 2 ? '#454544' : '#e4e4e4',
-          borderRadius: 10,
           justifyContent: 'center',
           alignItems: 'center',
         }}>
         <Text
           style={{
-            color: getSelectionMode == 2 ? 'white' : '#AD40AF',
-            fontSize: 14,
-            // fontFamily: 'Roboto-Medium',
+            color: getSelectionMode == 1 ?  colors.darkGrey:  colors.darkGrey,
+            fontSize: 15,
+            fontFamily: 'OpenSans-SemiBold',
           }}>
           {option2}
         </Text>
