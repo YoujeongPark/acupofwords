@@ -1,15 +1,5 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  SafeAreaView,
-  ScrollView,
-  ImageBackground,
-  TextInput,
-  TouchableOpacity,
-} from 'react-native';
-// import Carousel from 'react-native-snap-carousel';
-
+import { View, Text, SafeAreaView, ScrollView, ImageBackground, TextInput,TouchableOpacity} from 'react-native';
 import BannerSlider from '../components/BannerSlider';
 import { windowWidth } from '../utils/Dimensions';
 
@@ -101,7 +91,7 @@ export default function HomeScreen({ navigation }) {
             }}>
             <TextInput
               caretHidden={true}
-              placeholder="예 : 지금 떠오르는 행복한 기억은 뭔가요?"
+              placeholder="지금 떠오르는 행복한 기억은 뭔가요?"
               // pointerEvents="none"
               onTouchStart={changeQuestion}
               style={{
@@ -139,7 +129,7 @@ export default function HomeScreen({ navigation }) {
                   subTitle={item.subtitle}
                   isFree={item.isFree}
                   onPress={() =>
-                    navigation.navigate('GameDetails', {
+                    navigation.navigate('WritingDetails', {
                       title: item.title,
                       id: item.id,
                     })

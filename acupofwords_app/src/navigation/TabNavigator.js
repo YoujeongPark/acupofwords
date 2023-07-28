@@ -2,11 +2,12 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
-import {Image} from 'react-native';
+import {Image, TouchableOpacity, Text, View} from 'react-native';
 import HomeScreen from '../screens/HomeScreen';
 import CartScreen from '../screens/CartScreen';
-import FavoriteScreen from '../screens/FavoriteScreen';
+import FavoriteScreen from '../screens/FavoriteScreen'; 
 import GameDetailsScreen from '../screens/GameDetailsScreen';
+import WritingDetailsScreen from '../screens/WritingDetailsScreen';
 import colors from "../assets/colors/colors"
 // import Ionicons from 'react-native-vector-icons/Ionicons';
 
@@ -20,6 +21,31 @@ const HomeStack = () => {
         name="Home"
         component={HomeScreen}
         options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="WritingDetails"
+        component={WritingDetailsScreen}
+        options={({route}) => ({
+          // title: route.params?.title,
+          headerShown: false,
+        })}
+        // options={{
+        //   headerLeft: ({onPress}) => (
+        //     <TouchableOpacity onPress={onPress}>
+        //       <Text>Left</Text>
+        //     </TouchableOpacity>
+        //   ),
+        //   headerTitle: ({children}) => (
+        //     <View>
+        //       <Text>{children}</Text>
+        //     </View>
+        //   ),
+        //   headerRight: () => (
+        //     <View>
+        //       <Text>Right</Text>
+        //     </View>
+        //   ),
+        // }}
       />
       <Stack.Screen
         name="GameDetails"
@@ -101,7 +127,7 @@ const getTabBarVisibility = route => {
   const routeName = getFocusedRouteNameFromRoute(route) ?? 'Feed';
   // console.log(routeName);
 
-  if( routeName == 'GameDetails' ) {
+  if( routeName == 'WritingDetails' ) {
     return 'none';
   }
   return 'flex';
