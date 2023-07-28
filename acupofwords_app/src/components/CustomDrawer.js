@@ -11,7 +11,7 @@ import {
   DrawerItemList,
 } from '@react-navigation/drawer';
 
-import Ionicons from 'react-native-vector-icons/Ionicons';
+// import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 const CustomDrawer = props => {
@@ -55,7 +55,7 @@ const CustomDrawer = props => {
       <View style={{padding: 20, borderTopWidth: 1, borderTopColor: '#ccc'}}>
         <TouchableOpacity onPress={() => {}} style={{paddingVertical: 15}}>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
-            <Ionicons name="share-social-outline" size={22} />
+            {/* <Ionicons name="share-social-outline" size={22} /> */}
             <Text
               style={{
                 fontSize: 15,
@@ -68,7 +68,7 @@ const CustomDrawer = props => {
         </TouchableOpacity>
         <TouchableOpacity onPress={() => {}} style={{paddingVertical: 15}}>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
-            <Ionicons name="exit-outline" size={22} />
+            {/* <Ionicons name="exit-outline" size={22} /> */}
             <Text
               style={{
                 fontSize: 15,

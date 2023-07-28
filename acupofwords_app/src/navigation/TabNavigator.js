@@ -2,12 +2,12 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
-
+import {Image} from 'react-native';
 import HomeScreen from '../screens/HomeScreen';
 import CartScreen from '../screens/CartScreen';
 import FavoriteScreen from '../screens/FavoriteScreen';
 import GameDetailsScreen from '../screens/GameDetailsScreen';
-
+import colors from "../assets/colors/colors"
 // import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Tab = createBottomTabNavigator();
@@ -38,39 +38,59 @@ const TabNavigator = () => {
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
-        tabBarStyle: {backgroundColor: '#AD40AF'},
+        tabBarStyle: {backgroundColor: colors.white},
         tabBarInactiveTintColor: '#fff',
-        tabBarActiveTintColor: 'yellow',
+        tabBarActiveTintColor: colors.nightBG,
       }}>
       <Tab.Screen
-        name="Home2"
+        name="Home"
         component={HomeStack}
         options={({route}) => ({
           tabBarStyle: {
             display: getTabBarVisibility(route),
-            backgroundColor: '#AD40AF',
+            // backgroundColor: '#AD40AF',
           },
-          // tabBarIcon: ({color, size}) => (
-          //  <Ionicons name="home-outline" color={color} size={size} />
-          // ),
+          tabBarIcon: ({image, focused}) => {
+            if (route.name == 'Home') {
+              image = focused ? require('../assets/images/icon/Home.png') : require('../assets/images/icon/Home_not.png')
+            }
+            return <Image 
+              style={{width: 22, height: 22}}
+              source={image}
+              />
+          },
         })}
       />
       <Tab.Screen
-        name="Cart"
+        name="Cal"
         component={CartScreen}
-        options={{
-          tabBarBadge: 3,
-          tabBarBadgeStyle: {backgroundColor: 'yellow'},
-        }}
+        options={({route}) => ({
+          // tabBarBadge: 3,
+          tabBarIcon: ({image, focused}) => {
+            if (route.name == 'Cal') {
+              image = focused ? require('../assets/images/icon/Cal.png') : require('../assets/images/icon/Cal_not.png')
+            }
+            return <Image 
+              style={{width: 22, height: 22}}
+              source={image}
+              />
+          }
+        })}
       />
       <Tab.Screen
-        name="Favorite"
+        name="Setting"
         component={FavoriteScreen}
-        options={{
-          // tabBarIcon: ({color, size}) => (
-          //   <Ionicons name="heart-outline" color={color} size={size} />
-          // ),
-        }}
+        options={({route}) => ({
+          tabBarIcon: ({image, focused}) => {
+            if (route.name == 'Setting') {
+              image = focused ? require('../assets/images/icon/Setting.png') : require('../assets/images/icon/Setting_not.png')
+            }
+            return <Image 
+              style={{width: 22, height: 22}}
+              source={image}
+              />
+          }
+        })}
       />
     </Tab.Navigator>
   );
