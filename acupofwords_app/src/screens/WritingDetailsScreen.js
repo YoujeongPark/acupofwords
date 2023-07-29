@@ -1,8 +1,19 @@
 import React from 'react'
-import { View, Text, TouchableOpacity, Button, SafeAreaView, Image } from 'react-native'
+import { View, Text, TouchableOpacity, Button, SafeAreaView, Image, Share } from 'react-native'
 import colors from '../assets/colors/colors'
 
 const WritingDetailsScreen = ({ navigation, route }) => {
+
+  const onShare = async () => {
+    const result = await Share.share({
+      message:
+        'React Native | A framework for building native apps using React',
+    });
+  };
+
+  const beFavorite = () => {
+
+  }
 
   return (
     <SafeAreaView style={{
@@ -37,7 +48,7 @@ const WritingDetailsScreen = ({ navigation, route }) => {
             }}
           >
             <TouchableOpacity
-              onPress={() => navigation.pop()}
+              onPress={beFavorite}
               style={{
                 width: 10,
                 height: 10,
@@ -47,7 +58,7 @@ const WritingDetailsScreen = ({ navigation, route }) => {
                 source={require('../assets/images/icon/NotFavorite.png')} />
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => navigation.pop()}
+              onPress={onShare}
               style={{
                 width: 10,
                 height: 10,
