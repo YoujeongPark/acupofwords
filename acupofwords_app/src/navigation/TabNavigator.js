@@ -1,14 +1,17 @@
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
-import {Image, TouchableOpacity, Text, View} from 'react-native';
+import { Image, TouchableOpacity, Text, View } from 'react-native';
 import HomeScreen from '../screens/HomeScreen';
 import CartScreen from '../screens/CartScreen';
-import FavoriteScreen from '../screens/FavoriteScreen'; 
+import FavoriteScreen from '../screens/FavoriteScreen';
 import GameDetailsScreen from '../screens/GameDetailsScreen';
-import WritingDetailsScreen from '../screens/WritingDetailsScreen';
+import FAQScreen from '../screens/FAQScreen';
+import HelpCenterScreen from '../screens/HelpCenterScreen';
 import colors from "../assets/colors/colors"
+import SettingsScreen from '../screens/SettingsScreen';
+import WritingDetailsScreen from '../screens/WritingDetailsScreen';
 // import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Tab = createBottomTabNavigator();
@@ -20,43 +23,59 @@ const HomeStack = () => {
       <Stack.Screen
         name="Home"
         component={HomeScreen}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="WritingDetails"
         component={WritingDetailsScreen}
-        options={({route}) => ({
+        options={({ route }) => ({
           // title: route.params?.title,
           headerShown: false,
         })}
-        // options={{
-        //   headerLeft: ({onPress}) => (
-        //     <TouchableOpacity onPress={onPress}>
-        //       <Text>Left</Text>
-        //     </TouchableOpacity>
-        //   ),
-        //   headerTitle: ({children}) => (
-        //     <View>
-        //       <Text>{children}</Text>
-        //     </View>
-        //   ),
-        //   headerRight: () => (
-        //     <View>
-        //       <Text>Right</Text>
-        //     </View>
-        //   ),
-        // }}
-      />
-      <Stack.Screen
-        name="GameDetails"
-        component={GameDetailsScreen}
-        options={({route}) => ({
-          title: route.params?.title,
-        })}
-      />
+      // options={{
+      //   headerLeft: ({onPress}) => (
+      //     <TouchableOpacity onPress={onPress}>
+      //       <Text>Left</Text>
+      //     </TouchableOpacity>
+      //   ),
+      //   headerTitle: ({children}) => (
+      //     <View>
+      //       <Text>{children}</Text>
+      //     </View>
+      //   ),
+      //   headerRight: () => (
+      //     <View>
+      //       <Text>Right</Text>
+      //     </View>
+      //   ),
+      // }}
+      />      
     </Stack.Navigator>
   );
 };
+
+const SettingStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Setting"
+        component={SettingsScreen}
+        options={({ route }) => ({
+          headerShown: true,
+          title: route.params?.title,
+        })}
+      />
+      <Stack.Screen
+        name="FAQ"
+        component={FAQScreen}
+      />
+      <Stack.Screen
+        name="Help Center"
+        component={HelpCenterScreen}
+      />
+    </Stack.Navigator>
+  );   
+}
 
 const TabNavigator = () => {
   return (
@@ -64,57 +83,73 @@ const TabNavigator = () => {
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
-        tabBarStyle: {backgroundColor: colors.white},
+        tabBarStyle: { backgroundColor: colors.white },
         tabBarInactiveTintColor: '#fff',
         tabBarActiveTintColor: colors.nightBG,
       }}>
       <Tab.Screen
         name="Home"
         component={HomeStack}
-        options={({route}) => ({
+        options={({ route }) => ({
           tabBarStyle: {
             display: getTabBarVisibility(route),
             // backgroundColor: '#AD40AF',
           },
-          tabBarIcon: ({image, focused}) => {
+          tabBarIcon: ({ image, focused }) => {
             if (route.name == 'Home') {
               image = focused ? require('../assets/images/icon/Home.png') : require('../assets/images/icon/Home_not.png')
             }
-            return <Image 
-              style={{width: 22, height: 22}}
+            return <Image
+              style={{ width: 22, height: 22 }}
               source={image}
-              />
+            />
           },
         })}
       />
       <Tab.Screen
         name="Cal"
         component={CartScreen}
-        options={({route}) => ({
+        options={({ route }) => ({
           // tabBarBadge: 3,
-          tabBarIcon: ({image, focused}) => {
+          tabBarIcon: ({ image, focused }) => {
             if (route.name == 'Cal') {
               image = focused ? require('../assets/images/icon/Cal.png') : require('../assets/images/icon/Cal_not.png')
             }
-            return <Image 
-              style={{width: 22, height: 22}}
+            return <Image
+              style={{ width: 22, height: 22 }}
               source={image}
-              />
+            />
+          }
+        })}
+      />
+      <Tab.Screen
+        name="Favorite"
+        component={FavoriteScreen}
+        options={({ route }) => ({
+          // tabBarBadge: 3,
+          tabBarIcon: ({ image, focused }) => {
+            if (route.name == 'Favorite') {
+              image = focused ? require('../assets/images/icon/Favorite.png') : require('../assets/images/icon/NotFavorite.png')
+            }
+            return <Image
+              style={{ width: 22, height: 22 }}
+              source={image}
+            />
           }
         })}
       />
       <Tab.Screen
         name="Setting"
-        component={FavoriteScreen}
-        options={({route}) => ({
-          tabBarIcon: ({image, focused}) => {
+        component={SettingStack}
+        options={({ route }) => ({
+          tabBarIcon: ({ image, focused }) => {
             if (route.name == 'Setting') {
               image = focused ? require('../assets/images/icon/Setting.png') : require('../assets/images/icon/Setting_not.png')
             }
-            return <Image 
-              style={{width: 22, height: 22}}
+            return <Image
+              style={{ width: 22, height: 22 }}
               source={image}
-              />
+            />
           }
         })}
       />
@@ -127,7 +162,7 @@ const getTabBarVisibility = route => {
   const routeName = getFocusedRouteNameFromRoute(route) ?? 'Feed';
   // console.log(routeName);
 
-  if( routeName == 'WritingDetails' ) {
+  if (routeName == 'WritingDetails') {
     return 'none';
   }
   return 'flex';
