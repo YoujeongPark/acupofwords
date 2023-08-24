@@ -61,3 +61,4 @@ buck-out/
 # temporary 
 /android
 /ios
+/node_modules
