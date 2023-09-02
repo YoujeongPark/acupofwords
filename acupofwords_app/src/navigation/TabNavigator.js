@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import { Image, TouchableOpacity, Text, View } from 'react-native';
 import HomeScreen from '../screens/HomeScreen';
-import CartScreen from '../screens/CartScreen';
+import RecordsScreen from '../screens/RecordsScreen';
 import FavoriteScreen from '../screens/FavoriteScreen';
 import GameDetailsScreen from '../screens/GameDetailsScreen';
 import FAQScreen from '../screens/FAQScreen';
@@ -12,26 +12,39 @@ import HelpCenterScreen from '../screens/HelpCenterScreen';
 import colors from "../assets/colors/colors"
 import SettingsScreen from '../screens/SettingsScreen';
 import WritingDetailsScreen from '../screens/WritingDetailsScreen';
-// import Ionicons from 'react-native-vector-icons/Ionicons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+Ionicons.loadFont()
+
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
 const HomeStack = () => {
+
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+        gestureEnabled: true,
+        gestureDirection: 'vertical',
+        cardStyleInterpolator: undefined,
+        transitionSpec: undefined,
+      }}
+    >
       <Stack.Screen
         name="Home"
         component={HomeScreen}
-        options={{ headerShown: false }}
+        options={{
+          headerShown: false
+        }}
       />
       <Stack.Screen
         name="WritingDetails"
         component={WritingDetailsScreen}
-        options={({ route }) => ({
-          // title: route.params?.title,
-          headerShown: false,
-        })}
+        // options={({ route }) => ({
+        //   // title: route.params?.title,
+        //   headerShown: false,
+        // })}
       // options={{
       //   headerLeft: ({onPress}) => (
       //     <TouchableOpacity onPress={onPress}>
@@ -49,7 +62,7 @@ const HomeStack = () => {
       //     </View>
       //   ),
       // }}
-      />      
+      />
     </Stack.Navigator>
   );
 };
@@ -74,7 +87,53 @@ const SettingStack = () => {
         component={HelpCenterScreen}
       />
     </Stack.Navigator>
-  );   
+  );
+}
+
+const RecordsStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Records"
+        component={RecordsScreen}
+        options={({ route }) => ({
+          headerShown: true,
+          title: route.params?.title,
+        })}
+      />
+      <Stack.Screen
+        name="FAQ"
+        component={FAQScreen}
+      />
+      <Stack.Screen
+        name="Help Center"
+        component={HelpCenterScreen}
+      />
+    </Stack.Navigator>
+  );
+}
+
+const FavoriteStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Favorite"
+        component={FavoriteScreen}
+        options={({ route }) => ({
+          headerShown: true,
+          title: route.params?.title,
+        })}
+      />
+      <Stack.Screen
+        name="FAQ"
+        component={FAQScreen}
+      />
+      <Stack.Screen
+        name="Help Center"
+        component={HelpCenterScreen}
+      />
+    </Stack.Navigator>
+  );
 }
 
 const TabNavigator = () => {
@@ -88,7 +147,7 @@ const TabNavigator = () => {
         tabBarActiveTintColor: colors.nightBG,
       }}>
       <Tab.Screen
-        name="Home"
+        name="NavHome"
         component={HomeStack}
         options={({ route }) => ({
           tabBarStyle: {
@@ -96,7 +155,7 @@ const TabNavigator = () => {
             // backgroundColor: '#AD40AF',
           },
           tabBarIcon: ({ image, focused }) => {
-            if (route.name == 'Home') {
+            if (route.name == 'NavHome') {
               image = focused ? require('../assets/images/icon/Home.png') : require('../assets/images/icon/Home_not.png')
             }
             return <Image
@@ -107,12 +166,12 @@ const TabNavigator = () => {
         })}
       />
       <Tab.Screen
-        name="Cal"
-        component={CartScreen}
+        name="NavRecord"
+        component={RecordsStack}
         options={({ route }) => ({
           // tabBarBadge: 3,
           tabBarIcon: ({ image, focused }) => {
-            if (route.name == 'Cal') {
+            if (route.name == 'NavRecord') {
               image = focused ? require('../assets/images/icon/Cal.png') : require('../assets/images/icon/Cal_not.png')
             }
             return <Image
@@ -123,12 +182,12 @@ const TabNavigator = () => {
         })}
       />
       <Tab.Screen
-        name="Favorite"
-        component={FavoriteScreen}
+        name="NavFavorite"
+        component={FavoriteStack}
         options={({ route }) => ({
           // tabBarBadge: 3,
           tabBarIcon: ({ image, focused }) => {
-            if (route.name == 'Favorite') {
+            if (route.name == 'NavFavorite') {
               image = focused ? require('../assets/images/icon/Favorite.png') : require('../assets/images/icon/NotFavorite.png')
             }
             return <Image
@@ -139,11 +198,11 @@ const TabNavigator = () => {
         })}
       />
       <Tab.Screen
-        name="Setting"
+        name="NavSetting"
         component={SettingStack}
         options={({ route }) => ({
           tabBarIcon: ({ image, focused }) => {
-            if (route.name == 'Setting') {
+            if (route.name == 'NavSetting') {
               image = focused ? require('../assets/images/icon/Setting.png') : require('../assets/images/icon/Setting_not.png')
             }
             return <Image

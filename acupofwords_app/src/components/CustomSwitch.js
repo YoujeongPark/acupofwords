@@ -20,7 +20,7 @@ export default function CustomSwitch({
       style={{
         height: 20,
         width: '50%',
-        fontFamily: 'OpenSans-SemiBold',
+        // fontFamily: 'OpenSans-SemiBold',
         flexDirection: 'row',
         justifyContent: 'center',
       }}>
@@ -36,7 +36,7 @@ export default function CustomSwitch({
           style={{
             color: getSelectionMode == 1 ?  colors.darkGrey:  colors.darkGrey,
             fontSize: 15,
-            fontFamily: 'OpenSans-SemiBold',
+            // fontFamily: 'OpenSans-SemiBold',
           }}>
           {option1}
         </Text>
@@ -53,7 +53,7 @@ export default function CustomSwitch({
           style={{
             color: getSelectionMode == 1 ?  colors.darkGrey:  colors.darkGrey,
             fontSize: 15,
-            fontFamily: 'OpenSans-SemiBold',
+            // fontFamily: 'OpenSans-SemiBold',
           }}>
           {option2}
         </Text>

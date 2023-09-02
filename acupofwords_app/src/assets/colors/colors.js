@@ -6,7 +6,9 @@ const colors = {
     white: '#FAF9F6',
     whiteTransparent: '#FAF9F6',
     lightGrey: '#E3DDD3',
-    dayBG: '#F4E5D1',
+    // dayBG: '#F4E5D1',
+    btnDay : '#816347', 
+    btnNight : '#314D67', 
   };
   
   export default colors;
