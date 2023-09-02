@@ -16,7 +16,8 @@ const WritingDetailsScreen = ({ navigation, route }) => {
   }
 
   return (
-    <SafeAreaView style={{
+    <SafeAreaView 
+    style={{
       flex: 1,
       backgroundColor: colors.grey
     }}>
@@ -84,7 +85,7 @@ const WritingDetailsScreen = ({ navigation, route }) => {
             <Text style={{
               fontSize: 18,
               color: colors.white,
-              fontFamily: 'OpenSans-SemiBold'
+              // fontFamily: 'OpenSans-SemiBold'
             }}>
               A cup of words
             </Text>

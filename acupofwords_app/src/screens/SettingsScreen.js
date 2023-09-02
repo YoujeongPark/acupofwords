@@ -3,7 +3,8 @@ import { View, Text, SafeAreaView, Image, Switch, FlatList } from 'react-native'
 import colors from "../assets/colors/colors"
 import { ListItem } from 'react-native-elements';
 import { ScrollView } from 'react-native-gesture-handler';
-
+import Ionicons from 'react-native-vector-icons/Ionicons';
+Ionicons.loadFont()
 
 const SettingsScreen = (props) => {
 
@@ -134,6 +135,7 @@ const SettingsScreen = (props) => {
       <ListItem.Content>
         <ListItem.Title>{about.name}</ListItem.Title>
       </ListItem.Content>
+      <ListItem.Chevron/>
     </ListItem>
   )
 

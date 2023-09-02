@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+// import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 // import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import LoginSVG from '../assets/images/misc/login.svg';
@@ -43,14 +43,14 @@ const LoginScreen = ({navigation}) => {
 
         <InputField
           label={'Email ID'}
-          icon={
-            <MaterialIcons
-            name="alternate-email"
-            size={20}
-            color="#666"
-            style={{marginRight: 5}}
-          />
-          }
+          // icon={
+          //   <MaterialIcons
+          //   name="alternate-email"
+          //   size={20}
+          //   color="#666"
+          //   style={{marginRight: 5}}
+          // />
+          // }
           keyboardType="email-address"
         />
 

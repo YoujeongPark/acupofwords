@@ -1,7 +1,7 @@
 import React from 'react'
 import { SafeAreaView, View, Text, TouchableOpacity } from 'react-native';
 
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+// import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Gaming from '../assets/images/misc/gaming.svg';
 
 const OnboardingScreen = ({navigation}) => {
@@ -52,7 +52,7 @@ const OnboardingScreen = ({navigation}) => {
           }}>
           Let's Begin
         </Text>
-        <MaterialIcons name="arrow-forward-ios" size={22} color="#fff" />
+        {/* <MaterialIcons name="arrow-forward-ios" size={22} color="#fff" /> */}
       </TouchableOpacity>
     </SafeAreaView>
   );

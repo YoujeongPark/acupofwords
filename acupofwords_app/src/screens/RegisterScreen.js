@@ -12,8 +12,8 @@ import {
 
 import InputField from '../components/InputField';
 
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+// import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+// import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import RegistrationSVG from '../assets/images/misc/registration.svg';
 import GoogleSVG from '../assets/images/misc/google.svg';
@@ -109,40 +109,40 @@ const RegisterScreen = ({navigation}) => {
 
         <InputField
           label={'Email ID'}
-          icon={
-            <MaterialIcons
-              name="alternate-email"
-              size={20}
-              color="#666"
-              style={{marginRight: 5}}
-            />
-          }
+          // icon={
+          //   <MaterialIcons
+          //     name="alternate-email"
+          //     size={20}
+          //     color="#666"
+          //     style={{marginRight: 5}}
+          //   />
+          // }
           keyboardType="email-address"
         />
 
         <InputField
           label={'Password'}
-          icon={
-            <Ionicons
-              name="ios-lock-closed-outline"
-              size={20}
-              color="#666"
-              style={{marginRight: 5}}
-            />
-          }
+          // icon={
+          //   <Ionicons
+          //     name="ios-lock-closed-outline"
+          //     size={20}
+          //     color="#666"
+          //     style={{marginRight: 5}}
+          //   />
+          // }
           inputType="password"
         />
 
         <InputField
           label={'Confirm Password'}
-          icon={
-            <Ionicons
-              name="ios-lock-closed-outline"
-              size={20}
-              color="#666"
-              style={{marginRight: 5}}
-            />
-          }
+          // icon={
+          //   <Ionicons
+          //     name="ios-lock-closed-outline"
+          //     size={20}
+          //     color="#666"
+          //     style={{marginRight: 5}}
+          //   />
+          // }
           inputType="password"
         />
 
@@ -154,12 +154,12 @@ const RegisterScreen = ({navigation}) => {
             paddingBottom: 8,
             marginBottom: 30,
           }}>
-          <Ionicons
+          {/* <Ionicons
             name="calendar-outline"
             size={20}
             color="#666"
             style={{marginRight: 5}}
-          />
+          /> */}
           {/* <TouchableOpacity onPress={() => setOpen(true)}>
             <Text style={{color: '#666', marginLeft: 5, marginTop: 5}}>
               {dobLabel}
