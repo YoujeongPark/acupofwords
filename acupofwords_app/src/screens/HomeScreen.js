@@ -1,8 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { View, Text, SafeAreaView, ScrollView, ImageBackground, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, SafeAreaView, ScrollView, ImageBackground, Image, TouchableOpacity } from 'react-native';
 import BannerSlider from '../components/BannerSlider';
 import { windowWidth } from '../utils/Dimensions';
-// import { openDatabase } from 'react-native-sqlite-storage';
 import { freeGames, paidGames, sliderData } from '../model/data';
 import { questionData } from '../model/question';
 import CustomSwitch from '../components/CustomSwitch';
@@ -10,10 +9,7 @@ import ListItem from '../components/ListItem';
 import colors from "../assets/colors/colors"
 import Animated from 'react-native-reanimated';
 import BottomSheet from 'reanimated-bottom-sheet';
-// import {useTranslation} from 'react-i18next';
 
-
-// var db = openDatabase({ name: 'testDB.db' });
 
 export default function HomeScreen({ navigation }) {
   const [gamesTab, setGamesTab] = useState(1);
@@ -22,6 +18,7 @@ export default function HomeScreen({ navigation }) {
   const [time, setTime] = useState(new Date().getHours())
   const [isDay, setIsDay] = useState(true);
   const [question, setQuestion] = useState("")
+  const [clickCount, setClickCount] = useState(0);
   // const {t,i18n} = useTranslation();
 
 
@@ -36,14 +33,12 @@ export default function HomeScreen({ navigation }) {
   const randomIntFromInterval = (min, max) => { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min)
   }
-  
+
 
   const changeQuestion = () => {
-    const dataLength = questionData.length;
-    setQuestion(questionData[randomIntFromInterval(0, questionData.length-1)].ko)
+    setQuestion(questionData[randomIntFromInterval(0, questionData.length - 1)].en)
+    setClickCount((clickCount) => clickCount + 1)
   }
-
-
 
 
   useEffect(() => {
@@ -55,8 +50,7 @@ export default function HomeScreen({ navigation }) {
     } else {
       setIsDay(false)
     }
-    setQuestion(questionData[randomIntFromInterval(0, questionData.length-1)].ko)
-    //setQuestion(questionData[0]?.ko)
+    setQuestion(questionData[randomIntFromInterval(0, questionData.length - 1)].en)
   }, [])
 
   const renderContent = () => (
@@ -149,6 +143,7 @@ export default function HomeScreen({ navigation }) {
           <Text style={{
             fontSize: 28,
             color: colors.darkGrey,
+            paddingBottom: 5,
             // fontFamily: 'OpenSans-SemiBold'
           }}>Today’s Question is...</Text>
         </View>
@@ -158,24 +153,39 @@ export default function HomeScreen({ navigation }) {
             flexDirection: 'row',
             borderColor: '#C6C6C6',
             // backgroundColor: colors.white,
+            height: 60,
             borderWidth: 1,
             borderRadius: 8,
-            paddingHorizontal: 10,
+            paddingHorizontal: 20,
             paddingVertical: 8,
+            justifyContent: 'space-between',
+            flex: 1
           }}>
           <Text
             caretHidden={true}
+            numberOfLines={2}
             // pointerEvents="none"
             // onTouchStart={changeQuestion}
             style={{
-              fontSize: 15
+              fontSize: 14,
+              flex: 11,
+              
               // fontFamily: 'OpenSans-SemiBold'
             }}
           >
-          {question}
+            {question}
           </Text>
-          
-
+          <View
+            style={{
+              flex: 1,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <Image
+              source={clickCount == 0 ? require('../assets/images/icon/Home.png') : require('../assets/images/icon/Home.png')}
+              style={{ width: 20, height: 20, borderRadius: 10}}
+            />
+          </View>
         </View>
       </View>
       <View

@@ -28,10 +28,10 @@ export default function ListItem(
         <Image
           source={photo}
           style={{ 
-            width: 100, 
-            height: 100, 
+            width: 120, 
+            height: 120, 
             margin : 20,
-            marginRight: 8 }}
+          }}
         />
         <View 
           style={{ 
@@ -51,7 +51,7 @@ export default function ListItem(
               color: '#333',
               // fontFamily: 'Roboto-Medium',
               fontSize: 20,
-              textTransform: 'uppercase',
+              // textTransform: 'uppercase',
             }}>
             {title}
           </Text>

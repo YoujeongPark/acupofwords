@@ -66,7 +66,7 @@ export const paidGames = [
 
 export const freeGames = [
   {
-    poster: require('../assets/images/cup.png'),
+    poster: require('../assets/images/icon/dripcoffee.png'),
     title: 'Drip Coffee',
     subtitle: '한겨울의 어쩌구',
     type: 'Hot',
@@ -74,7 +74,7 @@ export const freeGames = [
     id: '1',
   },
   {
-    poster: require('../assets/images/cup.png'),
+    poster: require('../assets/images/icon/chamomiletea.png'),
     title: 'Chamomile Tea',
     subtitle: 'Gameloft',
     type: 'Hot',
@@ -82,7 +82,7 @@ export const freeGames = [
     id: '2',
   },
   {
-    poster: require('../assets/images/cup.png'),
+    poster: require('../assets/images/icon/peachtea.png'),
     title: 'Peach Tea',
     subtitle: 'miHoYo',
     type: 'Ice',
