@@ -168,8 +168,7 @@ export default function HomeScreen({ navigation }) {
             // onTouchStart={changeQuestion}
             style={{
               fontSize: 14,
-              flex: 11,
-              
+              flex: 11
               // fontFamily: 'OpenSans-SemiBold'
             }}
           >
@@ -183,7 +182,7 @@ export default function HomeScreen({ navigation }) {
             }}>
             <Image
               source={clickCount == 0 ? require('../assets/images/icon/Home.png') : require('../assets/images/icon/Home.png')}
-              style={{ width: 20, height: 20, borderRadius: 10}}
+              style={{ width: 20, height: 20, borderRadius: 10 }}
             />
           </View>
         </View>
@@ -233,9 +232,11 @@ export default function HomeScreen({ navigation }) {
               color={item.color}
               type={item.type}
               onPress={() =>
-                navigation.navigate('WritingDetails', {
+                navigation.navigate('WritingStart', { // WritingDetails
                   title: item.title,
                   id: item.id,
+                  question : question,
+                  fileName : item.fileName,
                 })
               }
             />

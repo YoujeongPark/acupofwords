@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useEffect} from 'react';
+import {useRoute} from '@react-navigation/native';
 import { View, Text, TouchableOpacity, Button, SafeAreaView, Image, Share } from 'react-native'
 import colors from '../assets/colors/colors'
 
@@ -15,12 +16,19 @@ const WritingDetailsScreen = ({ navigation, route }) => {
 
   }
 
+  // function IDText() {
+  //   const route = useRoute();
+  //   return <Text>id: {route.params.id}</Text>;
+  // }
+
+
+
   return (
-    <SafeAreaView 
-    style={{
-      flex: 1,
-      backgroundColor: colors.grey
-    }}>
+    <SafeAreaView
+      style={{
+        flex: 1,
+        backgroundColor: colors.grey
+      }}>
       <View
         style={{
           marginTop: 20,
@@ -101,7 +109,8 @@ const WritingDetailsScreen = ({ navigation, route }) => {
           {/* <Text>{route.params?.title}</Text> */}
           <Image
             style={{ width: 130, height: 130, margin: 10 }}
-            source={require('../assets/images/icon/ChooseCup.png')} />
+            source={
+              require('../assets/images/icon/ChooseCup.png')} />
           <View
             style={{
               // flex : 3
@@ -123,6 +132,14 @@ const WritingDetailsScreen = ({ navigation, route }) => {
             <Text>MORNING</Text>
             <Text>Start Writing... </Text>
           </TouchableOpacity>
+          <Button 
+            title="go to main" 
+            onPress={() => navigation.navigate('WritingStart')}
+          />
+          {/* <Button
+            title="다음"
+            onPress={() => navigation.push('WritingDetails', {id: route.params.id + 1})}
+          /> */}
           <TouchableOpacity
             style={{
               backgroundColor: colors.nightBG,

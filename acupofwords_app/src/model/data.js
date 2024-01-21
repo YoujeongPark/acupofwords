@@ -71,6 +71,7 @@ export const freeGames = [
     subtitle: '한겨울의 어쩌구',
     type: 'Hot',
     color : '#E2D4BF',
+    fileName : 'dripcoffee',
     id: '1',
   },
   {
@@ -79,6 +80,7 @@ export const freeGames = [
     subtitle: 'Gameloft',
     type: 'Hot',
     color : '#F4EDD3',
+    fileName : 'chamomiletea',
     id: '2',
   },
   {
@@ -87,6 +89,7 @@ export const freeGames = [
     subtitle: 'miHoYo',
     type: 'Ice',
     color : '#F6DEDB',
+    fileName : 'peachtea',
     id: '3',
   },
 ];

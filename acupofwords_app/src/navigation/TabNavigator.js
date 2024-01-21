@@ -2,7 +2,7 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
-import { Image, TouchableOpacity, Text, View } from 'react-native';
+import { Image, TouchableOpacity, Text, View, Button } from 'react-native';
 import HomeScreen from '../screens/HomeScreen';
 import RecordsScreen from '../screens/RecordsScreen';
 import FavoriteScreen from '../screens/FavoriteScreen';
@@ -12,14 +12,16 @@ import HelpCenterScreen from '../screens/HelpCenterScreen';
 import colors from "../assets/colors/colors"
 import SettingsScreen from '../screens/SettingsScreen';
 import WritingDetailsScreen from '../screens/WritingDetailsScreen';
+import WritingScreen from '../screens/WritingScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { HeaderBackButton } from '@react-navigation/elements';
 Ionicons.loadFont()
 
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
-const HomeStack = () => {
+const HomeStack = ({ navigation }) => {
 
   return (
     <Stack.Navigator
@@ -38,30 +40,40 @@ const HomeStack = () => {
           headerShown: false
         }}
       />
+      {/* <Stack.Screen name="Detail" component={DetailScreen} /> */}
+      <Stack.Screen
+        name="WritingStart"
+        component={WritingScreen}
+        options={({ route }) => ({
+          headerShown: true,
+          headerLeft: ({ onPress }) => (
+            <HeaderBackButton
+              labelVisible={false}
+              tintColor={colors.darkGrey}
+              onPress={() => navigation.goBack()}
+            />
+          ),
+          headerTitle: ({ children }) => (
+            <View>
+              <Text>Writing</Text>
+            </View>
+          ),
+          headerStyle: {
+            backgroundColor: colors.dayBG, // 수정필요 
+          },
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            fontSize: 20,
+          },
+        })}
+      />
       <Stack.Screen
         name="WritingDetails"
         component={WritingDetailsScreen}
-        // options={({ route }) => ({
-        //   // title: route.params?.title,
-        //   headerShown: false,
-        // })}
-      // options={{
-      //   headerLeft: ({onPress}) => (
-      //     <TouchableOpacity onPress={onPress}>
-      //       <Text>Left</Text>
-      //     </TouchableOpacity>
-      //   ),
-      //   headerTitle: ({children}) => (
-      //     <View>
-      //       <Text>{children}</Text>
-      //     </View>
-      //   ),
-      //   headerRight: () => (
-      //     <View>
-      //       <Text>Right</Text>
-      //     </View>
-      //   ),
-      // }}
+        options={({ route }) => ({
+          title: route.params?.title,
+          headerShown: false,
+        })}
       />
     </Stack.Navigator>
   );
@@ -224,6 +236,11 @@ const getTabBarVisibility = route => {
   if (routeName == 'WritingDetails') {
     return 'none';
   }
+
+  if (routeName == 'WritingStart') {
+    return 'none';
+  }
+
   return 'flex';
 };
 
