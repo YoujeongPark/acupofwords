@@ -17,8 +17,8 @@ const Memory: React.FC<ButtonProps> = ({ onClick, children, emotion, isFavority}
         {isFavority? <Image src={`/favority.svg`} alt={'favority'} width={15} height={15} /> : null}
       </div>
       <div>
-        <div>2000년</div>
-        <div>00월 00일</div>
+        <div>2000 years</div>
+        <div>00 Month 00 Day</div>
       </div>  
     </div>
   );

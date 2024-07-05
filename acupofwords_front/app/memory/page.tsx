@@ -47,12 +47,12 @@ export default function write() {
     <div>
       <div className="flex-row-center">
         <Image src="/left.svg" className= "cursor" alt="left" width={30} height={30} onClick={left} />
-        <div>2023년 5월</div>
+        <div>2023 year 5 year</div>
         <Image src="/right.svg" className= "cursor" alt="right" width={30} height={30} onClick={right} />
       </div>
       <div className="flex-row">
         <div className = "left-box oveflow-y">
-          <div className = "ml-3" >즐겨찾기</div>
+          <div className = "ml-3" >Favorites</div>
           <div className = "memory-grid">
             <Memory onClick={startWrite} emotion={"emotion"} isFavority = {true}> </Memory>
           </div>
@@ -70,7 +70,7 @@ export default function write() {
         <div>
           <input type="search" name="search" placeholder="   검색" rel="search" />
           <div className="mood mt-5">
-            <div>그날의 무드</div>
+            <div>Mood</div>
             {mood.map((item: any, i: any) => (
               <EmotionButton key={i} type={item} children={item} setTodayEmotion = {setTodayEmotion} onClick={filter} />
             ))}

@@ -18,7 +18,7 @@ export default function home() {
         <Image src="/start.svg" alt="start" width={700} height={400} />
       </div>
       <div className = "mt-10">
-        <CustomButton disable={false} onClick={start} style="btn-beige"> 커피/차 내리기 시작하기 →  </CustomButton>
+        <CustomButton disable={false} onClick={start} style="btn-beige"> Start Brewing Coffee/Tea → </CustomButton>
       </div>
     </div>
   )

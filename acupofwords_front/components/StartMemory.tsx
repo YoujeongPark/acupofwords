@@ -13,7 +13,7 @@ const StartMemory: React.FC<ButtonProps> = ({ onClick, children }) => {
     <div onClick={onClick} className="start-memory-box cursor">
         <div className = "flex-center">
           <Image src={`/startmemory.svg`} alt={'startmemory'} width={40} height={40} />
-          <div>오늘의 글</div>
+          <div>Today's article</div>
         </div>
     </div>
   );

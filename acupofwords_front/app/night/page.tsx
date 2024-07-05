@@ -54,12 +54,12 @@ export default function night() {
         <div style={{ width: '80%' }} className="h-auto" >
           <div ref={divRef}>
             <Question type = "night"/>
-            <NewAnswer disable={false} todayEmotion={todayEmotion} time={'저녁의 생각'} write={'| 질문의 답을 적어주세요. '} themeMode={'night'} />
+            <NewAnswer disable={false} todayEmotion={todayEmotion} time={'Evening Thoughts'} write={'| Please write your answer to the question.'} themeMode={'day'} />
           </div>
           <EvaluateToday setTodayEmotion={setTodayEmotion} todayEmotion={todayEmotion} themeMode={themeMode} />
           <div className="flex-end gap-5 mt-5">
-            <CustomButton disable={false} onClick={saveJpg} imgsrc={'/jpgSave-night.svg'} style="btn-blue delay-200 flex-row-center gap-3"> JPG로 저장 </CustomButton>
-            <CustomButton disable={false} onClick={savePdf} imgsrc={'/pdfSave-night.svg'} style="btn-blue delay-200 flex-row-center gap-3"> PDF로 저장 </CustomButton>
+            <CustomButton disable={false} onClick={saveJpg} imgsrc={'/jpgSave-night.svg'} style="btn-blue delay-200 flex-row-center gap-3"> Save as JPG </CustomButton>
+            <CustomButton disable={false} onClick={savePdf} imgsrc={'/pdfSave-night.svg'} style="btn-blue delay-200 flex-row-center gap-3"> Save as PDF </CustomButton>
           </div>
         </div>
         <div className="ml-20">

@@ -25,8 +25,8 @@ export default function memory() {
       <Question />
       <div className="flex-row">
         <div style={{ width: '80%' }}>
-          <Answer disable={false} time={'아침'} write={'| 질문의 답을 적어주세요. '} themeMode={themeMode} />
-          <Answer disable={false} time={'저녁'} write={'| 고민 후 저녁에 다시 답을 적어주세요. '} themeMode={themeMode} />
+          <Answer disable={false} time={'Morning'} write={'| Please write your answer to the question'} themeMode={themeMode} />
+          <Answer disable={false} time={'Evening'} write={'| After reflecting, please write your answer again in the evening.'} themeMode={themeMode} />
           <EvaluateToday themeMode={themeMode} />
         </div>
         <div className="ml-20">

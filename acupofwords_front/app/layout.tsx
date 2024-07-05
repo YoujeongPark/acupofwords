@@ -4,8 +4,8 @@ import Navbar from '../components/Navbar'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: '글 한컵',
-  description: '글 한컵을 담아보세요',
+  title: 'A cup of words',
+  description: 'Get a cup of words,
 }
 
 export default function RootLayout({

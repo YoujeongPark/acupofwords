@@ -12,7 +12,7 @@ export const Question = (props : any) => {
     let month = '' + (d.getMonth() + 1);
     let day = d.getDate();
 
-    return year + '년 ' + month + '월 ' + day + '일'
+    return year + 'year ' + month + 'month ' + day + 'day'
   }
 
   useEffect(() => {

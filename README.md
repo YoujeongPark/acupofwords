@@ -1,24 +1,39 @@
+# A Cup of Words
 
+## Description
 
-## 글한컵 
+A Cup of Words is a service designed to help you reflect on your daily life through writing. In our fast-paced, repetitive routines, it's easy to lose sight of our purpose. A Cup of Words offers a refreshing break by encouraging you to invest a short amount of time each day to record your thoughts and feelings, fostering inner transformation.
 
-<img src = "https://github.com/YoujeongPark/acupofwords/assets/53921789/0c02d148-1b84-482f-abe9-134ca44f749c" width="300" height="300">
-<img src = "https://github.com/YoujeongPark/acupofwords/assets/53921789/a7c08d92-ab72-49eb-9f59-788bdfa3785d" width="300" height="300">
-<img src = "https://github.com/YoujeongPark/acupofwords/assets/53921789/16635a01-9f6d-4433-bbd9-4229275a3ee0" width="300" height="300">
-<img src = "https://github.com/YoujeongPark/acupofwords/assets/53921789/feced894-b916-42ee-b060-f42f039342aa" width="300" height="300">
-<img src = "https://github.com/YoujeongPark/acupofwords/assets/53921789/c3503a17-a942-41dc-9a49-15343ed52b38" width="300" height="300">
-<img src = "https://github.com/YoujeongPark/acupofwords/assets/53921789/0e5c4972-13b0-4495-8a07-8bae3737533a" width="300" height="300">
+## Features
 
+- **Daily Reflections:** Take a few moments each day to write about your thoughts and emotions.
+- **Inner Transformation:** Experience personal growth by consistently recording your daily experiences.
+- **Comfortable Digital Space:** Enjoy a peaceful environment where you can reflect with a warm beverage and your thoughts.
 
+## Screenshots
 
-나에게 질문하고 글을 쓰는 서비스
+![Screenshot 1](https://github.com/YoujeongPark/acupofwords/assets/53921789/0c02d148-1b84-482f-abe9-134ca44f749c)
+![Screenshot 2](https://github.com/YoujeongPark/acupofwords/assets/53921789/a7c08d92-ab72-49eb-9f59-788bdfa3785d)
+![Screenshot 3](https://github.com/YoujeongPark/acupofwords/assets/53921789/16635a01-9f6d-4433-bbd9-4229275a3ee0)
+![Screenshot 4](https://github.com/YoujeongPark/acupofwords/assets/53921789/feced894-b916-42ee-b060-f42f039342aa)
+![Screenshot 5](https://github.com/YoujeongPark/acupofwords/assets/53921789/c3503a17-a942-41dc-9a49-15343ed52b38)
+![Screenshot 6](https://github.com/YoujeongPark/acupofwords/assets/53921789/0e5c4972-13b0-4495-8a07-8bae3737533a)
 
+## Purpose
 
-항상 같은 시간에 일어나 퇴근시간까지 일하는 반복적인 일상, 지루하지 않나요? 어느새 목적을 잃어버린 당신의 삶에 활기를 넣어줄 “글한컵“.
-매일 짧은 시간을 투자해 하루의 생각과 기분을 기록하며 내면의 변화를 경험해 봐요.
-편안한 디지털 공간 속에서 따뜻한 음료와 글로 나를 찾아가는 시간을 보내봐요! 
+Are you tired of your monotonous routine, waking up at the same time every day and working until the end of the day? Inject some vitality into your life with "A Cup of Words." By investing a short amount of time daily to record your thoughts and feelings, you can experience inner transformation. Spend time in a comfortable digital space, enjoying a warm beverage and writing to find yourself.
 
-https://acupofwords.netlify.app/
+## Live Demo
 
+Check out the live demo here: [A Cup of Words](https://acupofwords.netlify.app/)
 
+## How to Use
 
+1. **Visit the Website:** Go to [A Cup of Words](https://acupofwords.netlify.app/).
+2. **Start Your Day:** Begin your day by writing down your morning thoughts and feelings.
+3. **Reflect in the Evening:** In the evening, revisit your morning notes and reflect on the day's experiences.
+4. **Grow Daily:** Experience personal growth through this daily writing habit.
+
+## Contact
+
+For any questions or suggestions, please contact​⬤
